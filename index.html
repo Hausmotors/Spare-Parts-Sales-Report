@@ -1,5 +1,15 @@
 <meta charset="utf-8">
 <title>Sales Explorer — Cycle Haus</title>
+<script>
+(function() {
+  const CORRECT_PASSWORD = "KaagapaySaLakbay";
+  const password = prompt("Enter passphrase to access this tool:");
+  if (password !== CORRECT_PASSWORD) {
+    document.write("Access denied.");
+    document.close();
+  }
+})();
+</script>
 <style>
   :root {
     color-scheme: light;
