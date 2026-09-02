@@ -613,7 +613,7 @@ const state = {
 function getPeriod() {
   if (state.periodType === 'month') {
     const m = MONTHS.find(x => x.key === state.ym);
-    return { start: m.start, end: m.end, label: m.label + (m.partial ? ' (partial)' : ''), type: 'month', y: m.y, m: m.m, partial: m.partial };
+    return { start: m.start, end: m.end, label: m.label, type: 'month', y: m.y, m: m.m, partial: m.partial };
   }
   if (state.periodType === 'quarter') {
     const q = QUARTERS.find(x => x.key === state.yq);
@@ -804,7 +804,7 @@ function populatePeriodSelect() {
   if (state.periodType === 'month') {
     MONTHS.forEach(m => {
       const opt = document.createElement('option');
-      opt.value = String(m.key); opt.textContent = m.label + (m.partial ? ' (partial)' : '');
+      opt.value = String(m.key); opt.textContent = m.label;
       periodSelect.appendChild(opt);
     });
     periodSelect.value = String(state.ym);
